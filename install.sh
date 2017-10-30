@@ -47,7 +47,7 @@ hash git &> /dev/null || {
 }
 
 echo 'Cloning Gantry Container Manager...'
-git clone https://github.com/x/x.git "$INSTALL_DIR"
+git clone https://github.com/nogginfuel/Mash.git "$INSTALL_DIR"
 
 echo -e '\nInstallation complete!\n\n'
 
