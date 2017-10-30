@@ -1,0 +1,131 @@
+﻿/* Responsive Calendar for Foundation */
+.calendar { 
+    margin-left: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #012c57;
+}
+    .calendar * {
+        list-style: none;
+        line-height: 1;
+    }
+    .calendar .title { 
+        text-align: center; 
+        font-size: 1.6875rem; 
+    }
+    .calendar .week {
+        padding: 0px;
+        margin: 0px;
+    }
+    .calendar .week:before, .calendar .week:after {
+        content: " ";
+        display: table; 
+    }
+    .calendar .week:after {
+        clear: both; 
+    }
+.calendar .day,
+.calendar .days {
+  position: relative;
+  padding: 0.3rem 0.39375rem;
+  width: 100%;
+  min-height: 6rem;
+  float: left;
+}
+.calendar .day-header {
+    background-color: #012c57; 
+}
+.calendar .day-header .day,
+.calendar .day-header .days { 
+    background-color: #012c57; 
+    color: white;
+    text-align: center;
+    min-height: 0.5rem;
+    display: none;
+}
+
+.day:hover, .days:hover {
+    background: #efefef;
+}
+
+.day.previous-month,
+.days.previous-month,
+.day.next-month,
+.days.next-month {
+    background: #e9e9e9;
+    color: #222222;
+    display: none;
+}
+
+.day.today, .days.today {
+    background: #a3404e;
+}
+.day.today:hover, .days.today:hover {
+    background: #7c3240;
+}
+
+@media only screen {
+    .calendar .small-1 {
+        position: relative;
+        width: 14.28571%;
+    }
+
+    .calendar .day-header .small-1,
+    .small-1.previous-month,
+    .small-1.next-month {
+        display: block;
+        visibility: visible;
+    }
+}
+@media only screen and (min-width: 40.063em) {
+    .calendar .medium-1 {
+        position: relative;
+        width: 14.28571%;
+    }
+
+    .calendar .day-header .medium-1,
+    .medium-1.previous-month,
+    .medium-1.next-month {
+        display: block;
+        visibility: visible;
+    }
+}
+@media only screen and (min-width: 64.063em) {
+    .calendar .large-1 {
+        position: relative;
+        width: 14.28571%;
+    }
+
+    .calendar .day-header .large-1,
+    .large-1.previous-month,
+    .large-1.next-month {
+        display: block;
+        visibility: visible;
+    }
+}
+@media only screen and (min-width: 90.063em) {
+    .calendar .xlarge-1 {
+        position: relative;
+        width: 14.28571%;
+    }
+
+    .calendar .day-header .xlarge-1,
+    .xlarge-1.previous-month,
+    .xlarge-1.next-month {
+        display: block;
+        visibility: visible;
+    }
+}
+@media only screen and (min-width: 120.063em) {
+    .calendar .xxlarge-1 {
+        position: relative;
+        width: 14.28571%;
+    }
+
+    .calendar .day-header .xxlarge-1,
+    .xxlarge-1.previous-month,
+    .xxlarge-1.next-month {
+        display: block;
+        visibility: visible;
+    }
+}

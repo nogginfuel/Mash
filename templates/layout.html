@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %} - LXC Web Panel</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<link href="{{ url_for('static', filename='css/foundation.css') }}" rel="stylesheet">
+		<link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+
+		<link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
+
+	</head>
+
+	<body>
+		<div id="wrap">
+
+		{% if session.logged_in %}
+			{% include "includes/nav.html" %}
+		{% endif %}
+
+		
+			<div class="container">
+				<div class="row">
+					{% if session.logged_in %}
+						{% include "includes/aside.html" %}
+					{% endif %}
+
+					{% block content %}
+						{% with messages = get_flashed_messages(with_categories=true) %}
+							{% if messages %}
+								{% for category, message in messages %}
+									<div class="alert alert-{{ category }}">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										{{ message }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						{% endwith %}
+					{% endblock %}
+				</div>
+			</div>
+
+			<div id="push"></div>
+		</div>
+
+		<div id="footer">
+			<div class="container">
+				<p class="muted credit"><small>Gantry {% if 'logged_in' in session %} - <a href="{{ url_for('about') }}" class="muted">MIT License</a>{% endif %}<small></p>
+			</div>
+		</div>
+
+		<!-- javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script> var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+		<script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/vendor/what-input.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/vendor/foundation.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+		<script>
+				$(function() {
+						$(".alert").not('.dont-hide').alert().delay(5000).slideUp();
+						$("#home-btn").on('click',function(){
+								$('#home-load').fadeIn();
+						});
+						$("input").not("[type=submit]").jqBootstrapValidation();
+				});
+		</script>
+		{% block script %}{% endblock %}
+	</body>
+</html>

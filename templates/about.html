@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+	{{ super() }}
+	<h2>LXC Web Panel <small class="muted">Version : {{ version.current }}</small></h2>
+	<br />
+	<h4>Credits</h4>
+	<hr>
+	</div>
+
+	<div class="small-12 medium-12 large-12 columns">
+		<h3>Contributors</h3>	
+		<ul class="no-bullet">
+			<li><a href="#">Jef Lippiatt</a> - UI/UX Design / Development</li>
+			<li><a href="#">Jubal Biggs</a> - Documentation</li>
+			<li><a href="#">Martin Lane</a> - Python / Troubleshooting</li>
+		</ul>
+	</div>
+
+	<hr>
+
+	<div class="small-12 medium-12 large-12 columns">
+		<h3>The MIT License (MIT)</h3>
+		<p class="lead">&copy; 2017 Engility</p>
+		<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+		<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+		<div class="callout">
+			<p><small>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</small></p>
+		</div>
+	</div>
+	
+</div>
+
+{% endblock %}
